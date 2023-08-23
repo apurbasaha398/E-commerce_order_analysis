@@ -4,4 +4,5 @@ matplotlib
 seaborn
 kafka-python
 jupyter
+mysql-connector-python
 -e .
