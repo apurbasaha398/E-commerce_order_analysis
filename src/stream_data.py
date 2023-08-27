@@ -23,8 +23,8 @@ kafka_topic_name = config_obj.get('kafka', 'input_topic_name')
 KAFKA_TOPIC_NAME_CONS = kafka_topic_name
 KAFKA_BOOTSTRAP_SERVERS_CONS = kafka_host_name + ':' + kafka_port_no
 
-order_data_path = os.path.join("notebook", "Data", "olist_orders_dataset.csv")
-order_items_path = os.path.join("notebook", "Data", "olist_order_items_dataset.csv")
+order_data_path = os.path.join("hdfs://localhost:9000", "data", "olist", "olist_orders_dataset.csv")
+order_items_path = os.path.join("hdfs://localhost:9000", "data", "olist", "olist_order_items_dataset.csv")
 
 # Read the CSV file and select specific columns
 order_df = pd.read_csv(order_data_path, \
