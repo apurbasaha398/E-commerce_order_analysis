@@ -53,4 +53,4 @@ kafka_producer = KafkaProducer(
 for order in orders_list:
     print("Message to be sent: ", order)
     kafka_producer.send(KAFKA_TOPIC_NAME_CONS, value=order)
-    time.sleep(1)
+    time.sleep(0.5)

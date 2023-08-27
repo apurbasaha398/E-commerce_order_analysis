@@ -79,15 +79,6 @@ class DataIngestion:
             #orders_df2.printSchema()
             
             orders_df3 = orders_df2.select("orders.*")
-            '''
-            orders_df3 \
-                .writeStream \
-                .outputMode("update") \
-                .option("truncate", "false")\
-                .format("console") \
-                .start() \
-                .awaitTermination()
-            '''
             
             olist_customer_data_path = os.path.join("hdfs://localhost:9000", "data", "olist", "olist_customers_dataset.csv")
             olist_customer_df= spark.read.csv(olist_customer_data_path, header=True, inferSchema=True)
@@ -146,11 +137,11 @@ class DataIngestion:
                                                                     epoc_id, 
                                                                     mysql_table_name, 
                                                                     mysql_database_name)) \
-                .trigger(processingTime='10 seconds') \
+                .trigger(processingTime='2 seconds') \
                 .start()
                 
             print(order_detail_write_stream.status)
-            time.sleep(60)
+            time.sleep(3600)
             print(order_detail_write_stream.status)
             order_detail_write_stream.stop()              
             logging.info("Data ingestion completed")
