@@ -1,0 +1,1 @@
+Please visit [the page](https://public.tableau.com/app/profile/apurba.saha/viz/Ecommerce_Sales_Dashboard_16929613023030/E-commercesales) to access the dashboard prepared based on an extract of the original streaming data.
